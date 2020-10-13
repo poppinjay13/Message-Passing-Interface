@@ -7,7 +7,7 @@ num_p = comm.Get_size()
 
 
 if rank != 0:
-    comm.send("Hello From: " + str(rank), dest=0)
+    comm.send("Hello From " + str(rank), dest=0)
 else:
     for pid in range(1, num_p):
         print("Message: ", comm.recv(source=pid))
